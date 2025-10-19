@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Quote Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #quoteDisplay { margin: 20px 0; font-size: 1.2em; }
+    .form-section { margin-top: 30px; }
+    input { margin: 5px; padding: 8px; width: 200px; }
+    button { padding: 8px 12px; }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Quote Generator</h1>
+  <select id="categorySelect">
+    <option value="">All Categories</option>
+  </select>
+  <div id="quoteDisplay"></div>
+  <button id="newQuote">Show New Quote</button>
+
+  <div class="form-section">
+    <h3>Add a New Quote</h3>
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button id="addQuoteBtn">Add Quote</button>
+  </div>
+<!-- Add below your existing buttons -->
+<div class="form-section">
+  <h3>Import / Export Quotes</h3>
+  <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  <button id="exportBtn">Export Quotes</button>
+</div>
+  <select id="categoryFilter">
+  <option value="all">All</option>
+  <option value="inspirational">Inspirational</option>
+  <option value="funny">Funny</option>
+  <option value="life">Life</option>
+</select>
+
+<div id="conflictNotice" style="color: red; display: none;">
+  ⚠️ Conflict detected. Server data has been synced.
+</div>
+<button id="manualSync">Manual Sync</button>
+<button id="exportButton">Export Quotes to JSON</button>
+<input type="file" id="importFile" accept=".json">
+
+
+  <script src="script.js"></script>
+</body>
+</html>
